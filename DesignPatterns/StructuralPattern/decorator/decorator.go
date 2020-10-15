@@ -12,22 +12,6 @@ func (this ConcreteComponent) Calc() int {
 	return 0
 }
 
-type MutiDecorator struct {
-	c   Component
-	num int
-}
-
-func (this MutiDecorator) Calc() int {
-	return this.c.Calc()
-}
-
-func WrapMuti(c Component, n int) Component {
-	return &MutiDecorator{
-		c:   c,
-		num: n,
-	}
-}
-
 type AddDecorator struct {
 	Component
 	num int
